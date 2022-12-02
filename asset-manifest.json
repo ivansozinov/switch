@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nintendo-switch/static/css/main.cbf190fe.css",
+    "main.js": "/nintendo-switch/static/js/main.b297e891.js",
+    "static/js/787.ebefe576.chunk.js": "/nintendo-switch/static/js/787.ebefe576.chunk.js",
+    "static/media/logo.svg": "/nintendo-switch/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/nintendo-switch/index.html",
+    "main.cbf190fe.css.map": "/nintendo-switch/static/css/main.cbf190fe.css.map",
+    "main.b297e891.js.map": "/nintendo-switch/static/js/main.b297e891.js.map",
+    "787.ebefe576.chunk.js.map": "/nintendo-switch/static/js/787.ebefe576.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbf190fe.css",
+    "static/js/main.b297e891.js"
+  ]
+}
