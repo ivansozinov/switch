@@ -2,37 +2,253 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.switchWrapper {
+  width: 1195px;
+  height: 510px;
+  margin: 20vh auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content:space-between;
+  flex:1;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.reference {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.playground.ru/p/5RDVFP2fPNr5hwun4msSXg.jpeg') no-repeat;
+  background-size: 120%;
+  background-position: -117px -123px;
+  z-index: 999;
+  opacity: 0.5;
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.leftJoyCon, .rightJoyCon {
+  width: 170px;
+  position: relative;
+}
+
+.leftJoyCon {
+  background-color: #01c4e4;
+  order: 1;
+  border-radius: 110px 10px 10px 110px;
+}
+
+.leftJoyCon > .crossButtons {
+  position: absolute;
+  right: 36px;
+  top: 225px;
+}
+
+.leftJoyCon > .stick {
+  right: 43px;
+  top: 93px;
+}
+
+.rightJoyCon > .stick {
+  left: 45px;
+  top: 233px;
+}
+
+.centralConsole {
+  background-color: black;
+  color: aliceblue;
+  flex: 1;
+  order: 2;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+
+.rightJoyCon {
+  background-color: #fe6054;
+  order: 3;
+  border-radius: 10px 110px 110px 10px;
+}
+
+.rightJoyCon > .crossButtons {
+  position: absolute;
+  left: 37px;
+  top: 85px;
+}
+
+.crossButtons {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.crossButtons > div {
+  position: absolute;
+  height: 28px;
+  width: 35px;
+  background-color: #222;
+  border-radius: 100%;
+  color: #999;
+  transform: rotate(-45deg);
+  padding-top: 7px;
+}
+.crossButtons div.crossButtonsTop {
+  top: 0;
+  left: 0;
+}
+
+.crossButtons div.crossButtonsBottom {
+  bottom: 0;
+  right: 0;
+}
+
+.crossButtons div.crossButtonsLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.crossButtons div.crossButtonsRight {
+  top: 0;
+  right: 0;
+}
+
+.crossButtons > div::after {
+  position: absolute;
+  content: '';
+  width: 0; 
+  height: 0; 
+}
+
+.leftJoyCon .crossButtons div.crossButtonsRight::after {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid #121212;
+  left: 13px;
+  top: 9px;
+}
+
+.leftJoyCon .crossButtons div.crossButtonsLeft::after {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent; 
+  border-right:15px solid #121212;
+  left: 9px;
+  top: 8px;
+}
+
+.leftJoyCon .crossButtons div.crossButtonsTop::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 15px solid #121212;
+  left: 9px;
+  top: 8px;
+}
+
+.leftJoyCon .crossButtons div.crossButtonsBottom::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 15px solid #121212;
+  left: 9px;
+  top: 13px;
+}
+
+.stick {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  background-color: #222;
+  border-radius: 100%;
+}
+
+.stick::after {
+  content: "";
+  background-color: #121212;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  border-radius: 100%;
+  left: 12px;
+  top: 12px;
+  border: 0;
+}
+
+.leftJoyConMinus, .rightJoyConPlus {
+  font-size: 38px;
+  position: absolute;
+}
+
+.leftJoyConMinus {
+  right: 12px;
+  top: 30px;
+}
+
+.rightJoyConPlus {
+  left: 14px;
+  top: 30px;
+}
+
+.homeButton {
+  position: absolute;
+  height: 33px;
+  width: 33px;
+  left: 35px;
+  top: 345px;
+  border-radius: 100%;
+  border: 4px solid #666;
+  background: url('../public/switch-home.png') no-repeat #222;
+  background-position: 50% 50%;
+  background-size: 20px 20px;
+}
+
+.captureButton {
+  position: absolute;
+  background-color: #222;
+  height: 30px;
+  width: 30px;
+  right: 40px;
+  top: 350px;
+  border-radius: 3px;
+}
+
+.captureButton::after {
+  content: "";
+  background-color: black;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  border-radius: 100%;
+  left: 5px;
+  top: 5px;
+  border: 0;
+}
+
+/* shadows */
+.crossButtons > div {
+  box-shadow: 1px 1px 3px 1px rgba(250, 251, 251, 0.4) inset, 
+  2px 2px 3px 2px rgba(5, 6, 6, 0.2);
+}
+
+.stick {
+  box-shadow: 0px 1px 6px 1px rgba(250, 251, 251, 0.4) inset,
+  2px 2px 3px 2px rgba(5, 6, 6, 0.2);
+}
+
+.leftJoyCon {
+  box-shadow: 0px 2px 18px 2px rgba(43, 131, 233, 0.5) inset,
+  0px 0px 24px rgba(5, 6, 6, 0.7)
+}
+
+.rightJoyCon {
+  box-shadow: -2px -1px 14px 1px rgba(5, 6, 6, 0.2) inset,
+  0px 0px 24px rgba(5, 6, 6, 0.7)
+}
+
+.centralConsole {
+  box-shadow: 0px 0px 4px 0px rgba(5, 6, 6, 0.2) inset,
+  0px 0px 20px rgba(5, 6, 6, 0.7)
+}
+
+.captureButton::after, .stick::after {
+  box-shadow: 0px 1px 2px 1px rgba(50, 50, 50, 0.5) inset
 }
